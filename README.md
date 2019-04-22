@@ -65,6 +65,3 @@ gulp.task('watch', function() {
     gulp.watch(SCRIPTS_PATH, ['scripts']);
 });
 ```
-
-
-
