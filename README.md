@@ -23,3 +23,10 @@
     * Task functions need to be `async`:
     `gulp.task('styles', async function() {
     console.log('Starting styles task');});`
+
+## Add new plug into workflow
+
+* Install it (i.e, `gulp uglify`) by adding it into dev dependencies or running `sudo npm install --save-dev gulp-uglify`
+* Add it to the top of the `gulpfile.js` by giving it a name. For example, `var uglify = require('gulp-uglify');`
+* Add it to the task, using `.pipe`. For example, `.pipe(uglify())`.
+* If required, make it `return` to the `dist` folder at the end of the pipeline `.pipe(gulp.dest('public/dist'));`
