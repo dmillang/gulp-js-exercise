@@ -1,1 +1,1 @@
-for(var max=10,i=0;i<max;i++)console.log(i);
+for(var max=10,i=0;max>i;i++)console.log(i);
