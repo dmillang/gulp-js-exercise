@@ -50,3 +50,21 @@ server.start(function() {
 ``` 
 * To use run `node server.js` on terminal
     * While it's being used no other tasks can be performed on the terminal, close it by using `cntrl + c`
+
+## Add gulp watch
+
+* Gulp watch allows us to automatically update the files while working, so we don't have to call `gulp whatever-task` each time to update the files in the `dist` folder.
+
+* Add task in gulpfile.js and set files to watch. This task does not require us create a dependency.
+```
+var SCRIPTS_PATH = 'public/scripts/**/*.js';
+
+gulp.task('watch', function() {
+    console.log('starting watch task');
+    require('./server.js')
+    gulp.watch(SCRIPTS_PATH, ['scripts']);
+});
+```
+
+
+
