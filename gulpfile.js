@@ -1,21 +1,25 @@
-const gulp = require('gulp');
+var gulp = require('gulp');
+var uglify = require('gulp-uglify');
 
-// Default - just type 'gulp' to call
-gulp.task('default', async function() {
-    console.log('Starting default task')
+// Styles
+gulp.task('styles', function () {
+	console.log('starting styles task');
 });
 
-// Styles - type 'gulp styles' to call
-gulp.task('styles', async function() {
-    console.log('Starting styles task');
+// Scripts
+gulp.task('scripts', function () {
+	console.log('starting scripts task');
+
+	return gulp.src('public/scripts/*.js')
+		.pipe(uglify())
+		.pipe(gulp.dest('public/dist'));
 });
 
-// Scripts - type 'gulp scripts' to call
-gulp.task('scripts', async function() {
-    console.log('Starting scripts task');
+// Images
+gulp.task('images', function () {
+	console.log('starting images task');
 });
 
-// Images - type 'gulp images' to call
-gulp.task('images', async function() {
-    console.log('Starting images task');
+gulp.task('default', function () {
+	console.log('Starting default task');
 });
