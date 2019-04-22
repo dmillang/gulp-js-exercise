@@ -30,3 +30,23 @@
 * Add it to the top of the `gulpfile.js` by giving it a name. For example, `var uglify = require('gulp-uglify');`
 * Add it to the task, using `.pipe`. For example, `.pipe(uglify())`.
 * If required, make it `return` to the `dist` folder at the end of the pipeline `.pipe(gulp.dest('public/dist'));`
+
+## Add static server (npm static-server)
+
+* `sudo npm install static-server --save` **(NOT on devDependencies `--save-dev`)**
+* create `server.js` on project `root` folder
+* Add the following in `server.js`:
+```
+var StaticServer = require('static-server');
+
+var server = new StaticServer({
+    rootPath: './public/',
+    port: 3000
+});
+
+server.start(function() {
+    console.log('Server started on port ' + server.port);
+});
+``` 
+* To use run `node server.js` on terminal
+    * While it's being used no other tasks can be performed on the terminal, close it by using `cntrl + c`
