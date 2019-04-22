@@ -29,6 +29,7 @@ gulp.task('default', function () {
 	console.log('Starting default task');
 });
 
+// WATCH
 gulp.task('watch', function () {
 	console.log('Starting watch task');
 	require('./server.js');

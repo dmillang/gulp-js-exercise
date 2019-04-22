@@ -65,3 +65,19 @@ gulp.task('watch', function() {
     gulp.watch(SCRIPTS_PATH, ['scripts']);
 });
 ```
+
+## Add gulp live reload
+
+* Install live reload `sudo npm install gulp-livereload@3.8.1 --save-dev`
+* define `var livereload = require('gulp-livereload');`
+* add to task:
+```
+gulp.task('watch', function () {
+	console.log('Starting watch task');
+	require('./server.js');
+	livereload.listen();
+	gulp.watch(SCRIPTS_PATH, ['scripts']);
+});
+```
+* Add script to end of `<body>` in `index.html` for live reload
+`<script src="http://localhost:35729/livereload.js"></script>`
